@@ -15,9 +15,9 @@ import time
 import os
 import scipy.io
 from model import ft_net
-from resent import PCB,ft_net_50_1
+
 #from model import 
-from resent_22_1 import ft_net_50_2
+
 ######################################################################
 # Options
 # --------
