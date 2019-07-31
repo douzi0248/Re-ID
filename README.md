@@ -1,8 +1,5 @@
 # Re-ID
-Market 1501      Rank1         mAP                 
-                 95.81        88.28
+Market 1501      Rank1 =95.81         mAP=88.28                 
                  
                  
-                 
-DukeMTMC-REID    Rank1          mAP
-                 88.7          77.9
+DukeMTMC-REID    Rank1 =88.7          mAP=77.9
