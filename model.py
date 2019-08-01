@@ -79,12 +79,9 @@ class ft_net(nn.Module):
         self.avgpool_4 = nn.AdaptiveMaxPool2d((1,1))
         self.avgpool_5 = nn.AdaptiveMaxPool2d((1,1))
         self.classifier_1 = ClassBlock(1024, class_num,num_bottleneck=512)
-        #self.classifier_2 = ClassBlock(4096, class_num,num_bottleneck=512)
         
         self.classifier_2 = ClassBlock(2048, class_num,num_bottleneck=512)
         self.classifier_3 = ClassBlock(8192, class_num,num_bottleneck=512)
-        #self.classifier_4 = ClassBlock(2048, class_num,num_bottleneck=512)
-        #self.fc = nn.Linear(6144,12)
     def forward(self, x):
         x = self.model.conv1(x)
         x = self.model.bn1(x)
@@ -103,16 +100,15 @@ class ft_net(nn.Module):
         x0 = x_0 + x_1
         x_31 = x3+x_3
         x4 = x_41+x_4
-        #第3个卷积层
+        #
         x6 = torch.squeeze(x0)
         x_0 = torch.squeeze(x_0)
         x_1 = torch.squeeze(x_1)
         x3 = torch.squeeze(x3)
         x_3 = torch.squeeze(x_3)
-        x_31 = torch.squeeze(x_31)
         #x7 = x1.view(x1.size(0),-1)
         
-        #第4个卷积层
+        #
         x9 =  torch.squeeze(x_31)
         x_10= x_4.view(x_4.size(0),-1)
         x_11= x_41.view(x_41.size(0),-1)
@@ -122,7 +118,7 @@ class ft_net(nn.Module):
         x14,x15,x16 = self.classifier_1(x6)
         x19,x17,x18 = self.classifier_2(x9)
         x23,x21,x22 = self.classifier_3(x10)
-        #x24,x25,x26 = self.classifier_4(x3)
+        #
         return x16,x18,x22,x_0,x_1,x3,x_3,x_10,x_11
 
 # debug model structure
