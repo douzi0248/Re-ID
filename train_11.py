@@ -179,13 +179,13 @@ def train_model(model, criterion,triplet, num_epochs):
                 _, preds1 = torch.max(outputs1.data, 1)
                 _, preds2 = torch.max(outputs2.data, 1)
                 _, preds3 = torch.max(outputs3.data, 1)
-                #_, preds4 = torch.max(outputs4.data, 1)
+                #
                 
                 
                 loss1 = criterion(outputs1, labels)
                 loss2 = criterion(outputs2, labels)
                 loss3 = criterion(outputs3, labels)
-                #loss4 = criterion(outputs4, labels)
+                #
                 loss5 =  triplet(q1, labels)[0]
                 loss6 =  triplet(q2, labels)[0]
                 loss7 =  triplet(q3, labels)[0]
@@ -193,11 +193,11 @@ def train_model(model, criterion,triplet, num_epochs):
                 loss9 =  triplet(q5, labels)[0]
                 loss10 =  triplet(q6, labels)[0]
                 
-                #loss11 =  triplet(q5, labels)[0]
+                #
                 temp_loss.append(loss1)
                 temp_loss.append(loss2)
                 temp_loss.append(loss3)
-                #temp_loss.append(loss4)
+                #
                 loss = sum(temp_loss)/3+(loss5+loss6+loss7+loss8+loss9+loss10)/6
                 # backward + optimize only if in training phase
                 if phase == 'train':
@@ -212,7 +212,7 @@ def train_model(model, criterion,triplet, num_epochs):
                 a = float(torch.sum(preds1 == labels.data))
                 b = float(torch.sum(preds2 == labels.data))
                 c = float(torch.sum(preds3 == labels.data))
-                #d = float(torch.sum(preds4 == labels.data))
+                #
                
                 
                 running_corrects_1 = a + b +c 
