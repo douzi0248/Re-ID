@@ -2,7 +2,7 @@
 
 Market 1501
 
-Resnet50 :  batchsize=32 :    Rank1 =95.81         mAP=88.28
+Resnet50 :          batchsize=32 :         Rank1 =95.81         mAP=88.28
 
 
 If you want a higher accuracy, you may  modify batchsize.     
@@ -10,7 +10,7 @@ If you want a higher accuracy, you may  modify batchsize.
                  
 DukeMTMC-REID 
 
-Resnet50:  batchsize =32 :    Rank1 =88.7          mAP=77.9    
+Resnet50:          batchsize =32 :        Rank1 =88.7          mAP=77.9    
 
 pytorch = 0.4
 
