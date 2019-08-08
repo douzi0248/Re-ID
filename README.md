@@ -1,8 +1,11 @@
 # Re-ID
+
 Market 1501
 
 Resnet50 :  batchsize=32 :    Rank1 =95.81         mAP=88.28
-             
+
+
+If you want a higher accuracy, you may  modify batchsize.     
                  
                  
 DukeMTMC-REID 
