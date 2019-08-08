@@ -6,4 +6,4 @@ DukeMTMC-REID ：   Rank1 =88.7          mAP=77.9
 
 pytorch = 0.4
 
-The codes are expanded on a ReID-baseline, which was put forward by layumi.
+The codes are expanded on a ReID-baseline, which was put forward by layumi（Zhedong Zheng,）.
