@@ -94,7 +94,7 @@ image_datasets['val'] = datasets.ImageFolder(os.path.join(data_dir, 'val'),
                                           data_transforms['val'])
 
 dataloaders = {x: torch.utils.data.DataLoader(image_datasets[x], batch_size= batchsize,
-                                              sampler= RandomIdentitySampler(image_datasets[x],32,4), num_workers=8) # 8 workers may work faster
+                                              sampler= RandomIdentitySampler(image_datasets[x],batchsize,4), num_workers=8) # 8 workers may work faster
               for x in ['train']}
 dataset_sizes = {x: len(image_datasets[x]) for x in ['train', 'val']}
 class_names = image_datasets['train'].classes
