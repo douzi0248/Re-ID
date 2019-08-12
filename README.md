@@ -4,6 +4,9 @@ Market 1501
 
 Resnet50 :          batchsize=32 :         Rank1 =95.81         mAP=88.28
 
++  RK (Re-Ranking):  Rank1 =96.25         mAP=94.31
+
+
 
 If you want a higher accuracy, you may  modify batchsize or use Resnet101.     
                  
