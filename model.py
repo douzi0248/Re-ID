@@ -122,4 +122,3 @@ class ft_net(nn.Module):
         return x16,x18,x22,x_0,x_1,x3,x_3,x_10,x_11
 
 
-input = Variable(torch.FloatTensor(8, 3, 224, 224))
