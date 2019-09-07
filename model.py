@@ -121,11 +121,5 @@ class ft_net(nn.Module):
         #
         return x16,x18,x22,x_0,x_1,x3,x_3,x_10,x_11
 
-# debug model structure
-#net = ft_net(12)
-#net = ft_net_50(751)
-#print(net)
+
 input = Variable(torch.FloatTensor(8, 3, 224, 224))
-#output = net(input)
-#print('net output size:')
-#print(output.shape)
