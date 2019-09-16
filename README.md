@@ -18,4 +18,4 @@ Resnet50:          batchsize =32 :        Rank1 =88.7      ,    mAP=77.9
 pytorch = 0.4
 
 
-https://blog.csdn.net/weixin_40957334/article/details/98757625
+
