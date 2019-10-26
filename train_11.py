@@ -133,7 +133,7 @@ def train_model(model, criterion,triplet, num_epochs):
         print('Epoch {}/{}'.format(epoch, num_epochs - 1))
         print('-' * 10)
         # update learning rate
-        lr_scheduler = LRScheduler(base_lr=3e-2, step=[60, 130,300],
+        lr_scheduler = LRScheduler(base_lr=3e-2, step=[60, 130],
                                factor=0.1, warmup_epoch=10,
                                warmup_begin_lr=3e-4)
 
@@ -329,5 +329,5 @@ if os.path.isdir(dir_name):
 # save opts
 
 model = train_model(model, criterion, triplet,
-                       num_epochs=320)
+                       num_epochs=220)
 
