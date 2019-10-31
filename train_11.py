@@ -35,7 +35,7 @@ name = 'ft_net_54922'
 data_dir = '/home/pt/下载/Market/pytorch'
 train_all_1 = 'True'
 batchsize = 32 
-erasing_p = 0.5
+erasing_p = 0.6
 str_ids = gpu_ids.split(',')
 gpu_ids = []
 if not os.path.exists('./model/%s' % name):
