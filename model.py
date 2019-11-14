@@ -27,7 +27,7 @@ def weights_init_classifier(m):
 # Defines the new fc layer and classification layer
 # |--Linear--|--bn--|--relu--|--Linear--|
 class ClassBlock(nn.Module):
-    def __init__(self, input_dim, class_num,  relu=False, num_bottleneck=512):
+    def __init__(self, input_dim, class_num,  relu=True, num_bottleneck=512):
         super(ClassBlock, self).__init__()
         #add_block = []
         add_block1 = []
