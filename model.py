@@ -75,9 +75,10 @@ class ft_net(nn.Module):
         #self.avgpool_2 = nn.AdaptiveAvgPool2d((2,2))
         
         self.avgpool_2 = nn.AdaptiveAvgPool2d((2,2))
-        self.avgpool_3 = nn.AdaptiveMaxPool2d((2,2))
-        self.avgpool_4 = nn.AdaptiveMaxPool2d((1,1))
-        self.avgpool_5 = nn.AdaptiveMaxPool2d((1,1))
+        self.maxpool_3 = nn.AdaptiveMaxPool2d((2,2))
+        
+        self.maxpool_4 = nn.AdaptiveMaxPool2d((1,1))
+        self.maxpool_5 = nn.AdaptiveMaxPool2d((1,1))
         self.classifier_1 = ClassBlock(1024, class_num,num_bottleneck=512)
         
         self.classifier_2 = ClassBlock(2048, class_num,num_bottleneck=512)
@@ -91,12 +92,16 @@ class ft_net(nn.Module):
         x = self.model.layer2(x)
         x0 = self.model.layer3(x)
         x = self.model.layer4(x0)
+        #
         x3 = self.model.avgpool(x)
-        x_3 = self.avgpool_5(x)
+        x_3 = self.maxpool_5(x)
+        #
         x_41 = self.avgpool_2(x)
-        x_4 = self.avgpool_3(x)
+        x_4 = self.maxpool_3(x)
+        #
         x_0 = self.avgpool_1(x0)
-        x_1 = self.avgpool_4(x0)
+        x_1 = self.maxpool_4(x0)
+        
         x0 = x_0 + x_1
         x_31 = x3+x_3
         x4 = x_41+x_4
