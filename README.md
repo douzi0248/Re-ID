@@ -13,8 +13,9 @@ If you want a higher accuracy, you may  modify batchsize .
                  
 DukeMTMC-REID 
 
-Resnet50:          batchsize =32 :        Rank1 =88.7      ,    mAP=77.9    
-Resnet50:          batchsize =32 :        Rank1 =90.1    ,    mAP=79.7
+Resnet50:          batchsize =32 :        Rank1 =88.7      ,    mAP=77.9 
+
+Resnet50(IBN):     batchsize =32 :        Rank1 =90.1    ,    mAP=79.7
 pytorch = 0.4
 
 
