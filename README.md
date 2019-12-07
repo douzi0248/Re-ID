@@ -1,5 +1,12 @@
  Re-ID
 
+1:prepare.py
+2:train_11.py
+3:test.py
+4:evaluate_gpu.py
+
+
+
 Market 1501
 
             Resnet50 :          batchsize=32 :         Rank1 =95.81    ,    mAP=88.28
