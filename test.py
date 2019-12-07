@@ -149,7 +149,7 @@ query_cam,query_label = get_id(query_path)
 print('-------test-----------')
 #model_structure =ft_net_middle(751)
 #model_structure = ft_net_50_1(751)
-model_structure =ft_net(751)
+model_structure =ft_net(751,True)
 model = load_network(model_structure)
 
 # Remove the final fc layer and classifier layer
