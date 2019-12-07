@@ -126,5 +126,5 @@ class ft_net(nn.Module):
         x23,x21,x22 = self.classifier_3(x10)
         #
         if self.test == True:
-            return x15,x17,x19,x_0,x_1,x3,x_3,x_10,x_11
+            return x15,x17,x21,x_0,x_1,x3,x_3,x_10,x_11
         return x16,x18,x22,x_0,x_1,x3,x_3,x_10,x_11
