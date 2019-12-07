@@ -61,7 +61,7 @@ class ClassBlock(nn.Module):
 #ft_net_50_1
 class ft_net(nn.Module):
 
-    def __init__(self, class_num ):
+    def __init__(self, class_num ,test):
         super(ft_net, self).__init__()
         model_ft = models.resnet50(pretrained=True)
         # avg pooling to global pooling
@@ -83,6 +83,7 @@ class ft_net(nn.Module):
         
         self.classifier_2 = ClassBlock(2048, class_num,num_bottleneck=512)
         self.classifier_3 = ClassBlock(8192, class_num,num_bottleneck=512)
+        self.test = test
     def forward(self, x):
         x = self.model.conv1(x)
         x = self.model.bn1(x)
@@ -124,4 +125,6 @@ class ft_net(nn.Module):
         x19,x17,x18 = self.classifier_2(x9)
         x23,x21,x22 = self.classifier_3(x10)
         #
+        if self.test == True:
+            return x15,x17,x19,x_0,x_1,x3,x_3,x_10,x_11
         return x16,x18,x22,x_0,x_1,x3,x_3,x_10,x_11
