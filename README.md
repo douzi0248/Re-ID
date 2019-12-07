@@ -25,7 +25,7 @@ Market 1501
                  
 DukeMTMC-REID 
 
-           Resnet50:          batchsize =32 :        Rank1 =88.7      ,    mAP=77.9 
+           Resnet50:          batchsize =32 :        Rank1 =88.84     ,    mAP=77.95
 
 
           Resnet50(IBN):     batchsize =32 :        Rank1 =90.1    ,    mAP=79.7
