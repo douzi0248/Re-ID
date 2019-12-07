@@ -66,19 +66,14 @@ transform_train_list = [
         transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
         ]
 
-transform_val_list = [
-        transforms.Resize(size=(256,128),interpolation=3), #Image.BICUBIC
-        transforms.ToTensor(),
-        transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
-        ]
+
 
 if erasing_p>0:
     transform_train_list = transform_train_list +  [RandomErasing(probability = erasing_p)]
 
 print(transform_train_list)
 data_transforms = {
-    'train': transforms.Compose( transform_train_list ),
-    'val': transforms.Compose(transform_val_list),
+    'train': transforms.Compose( transform_train_list )
 }
 
 
@@ -89,13 +84,12 @@ if train_all_1:
 image_datasets = {}
 image_datasets['train'] = datasets.ImageFolder(os.path.join(data_dir, 'train' + train_all),
                                           data_transforms['train'])
-image_datasets['val'] = datasets.ImageFolder(os.path.join(data_dir, 'val'),
-                                          data_transforms['val'])
+
 
 dataloaders = {x: torch.utils.data.DataLoader(image_datasets[x], batch_size= batchsize,
                                               sampler= RandomIdentitySampler(image_datasets[x],batchsize,4), num_workers=8) # 8 workers may work faster
               for x in ['train']}
-dataset_sizes = {x: len(image_datasets[x]) for x in ['train', 'val']}
+dataset_sizes = {x: len(image_datasets[x]) for x in ['train']}
 class_names = image_datasets['train'].classes
 
 use_gpu = torch.cuda.is_available()
