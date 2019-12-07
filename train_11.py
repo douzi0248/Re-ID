@@ -297,7 +297,7 @@ def save_network(network, epoch_label):
 
 
 #model_structure = ft_net(len(class_names))
-model = ft_net(len(class_names))
+model = ft_net(len(class_names),False)
 #model = load_network(model_structure)
 
 
