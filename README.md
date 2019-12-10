@@ -35,9 +35,7 @@ DukeMTMC-REID
 
 If you want a higher accuracy, you may  modify batchsize .
 
-Resnet50(IBN)预训练权重：
-链接：https://pan.baidu.com/s/1nVf_Tgd_YIlv07G5v-yyrg 
-提取码：rfyh 
+
 
 
 
