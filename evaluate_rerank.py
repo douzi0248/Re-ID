@@ -83,6 +83,6 @@ CMC = CMC.float()
 CMC = CMC/len(query_label) #average CMC
 print('top1:%f top5:%f top10:%f mAP:%f'%(CMC[0],CMC[4],CMC[9],ap/len(query_label)))
 name = 'ft_net_11_18'
-# 在日志文件中记录每个epoch的精度和loss
+# 记录每个epoch的精度和loss
 with open('./model/%s/%s.txt' %(name,name+'_172_2'),'a') as acc_file:
     acc_file.write('Rank@1: %f, Rank@5: %f, Rank@10: %f\n,mAP:%f' % (CMC[0],CMC[4],CMC[9],ap/len(query_label)))
